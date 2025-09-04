@@ -1,0 +1,15 @@
+
+[
+  {
+    "id": "jee-sample-001",
+    "question": "Evaluate the integral ∫_0^∞ x^2 e^{-x^2} dx.",
+    "question_text": "Evaluate the integral ∫_0^∞ x^2 e^{-x^2} dx.",
+    "solution_steps": [
+      "Substitute u = x^2 so du = 2x dx and transform integral to 1/2 ∫_0^∞ u^{1/2} e^{-u} du",
+      "Recognize Gamma function: Γ(3/2) = √π/2",
+      "So integral = 1/2 * Γ(3/2) = √π/4"
+    ],
+    "final_answer": "\\frac{\\sqrt{\\pi}}{4}",
+    "metadata": {"source":"JEE-Sample","topic":"calculus","difficulty":"medium"}
+  }
+]

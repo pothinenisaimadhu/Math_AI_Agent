@@ -1,0 +1,654 @@
+[
+  {
+    "id": "calc-001",
+    "question": "Find the derivative of f(x) = x^3 + 2x^2 - 5x + 1",
+    "topic": "calculus",
+    "grade_level": "intermediate",
+    "solution_steps": [
+      "Apply the power rule to each term: d/dx[x^n] = nx^(n-1)",
+      "d/dx[x^3] = 3x^2",
+      "d/dx[2x^2] = 4x",
+      "d/dx[-5x] = -5",
+      "d/dx[1] = 0",
+      "Combine all terms: f'(x) = 3x^2 + 4x - 5"
+    ],
+    "final_answer": "f'(x) = 3x^2 + 4x - 5",
+    "educational_notes": "The power rule is fundamental in calculus. Remember that the derivative of a constant is always zero."
+  },
+  {
+    "id": "calc-002",
+    "question": "Evaluate the integral ∫(2x + 3)dx",
+    "topic": "calculus",
+    "grade_level": "intermediate",
+    "solution_steps": [
+      "Apply the power rule for integration: ∫x^n dx = x^(n+1)/(n+1) + C",
+      "∫2x dx = 2 · x^2/2 = x^2",
+      "∫3 dx = 3x",
+      "Add the constant of integration C",
+      "Final result: x^2 + 3x + C"
+    ],
+    "final_answer": "x^2 + 3x + C",
+    "educational_notes": "Always remember to add the constant of integration C when finding indefinite integrals."
+  },
+  {
+    "id": "alg-001",
+    "question": "Solve the quadratic equation x^2 - 5x + 6 = 0",
+    "topic": "algebra",
+    "grade_level": "intermediate",
+    "solution_steps": [
+      "Use the quadratic formula: x = (-b ± √(b^2 - 4ac)) / 2a",
+      "Identify coefficients: a = 1, b = -5, c = 6",
+      "Calculate discriminant: b^2 - 4ac = (-5)^2 - 4(1)(6) = 25 - 24 = 1",
+      "Apply formula: x = (5 ± √1) / 2 = (5 ± 1) / 2",
+      "Two solutions: x = (5 + 1)/2 = 3 and x = (5 - 1)/2 = 2"
+    ],
+    "final_answer": "x = 2 or x = 3",
+    "educational_notes": "This quadratic can also be solved by factoring: (x-2)(x-3) = 0"
+  },
+  {
+    "id": "trig-001",
+    "question": "Find the exact value of sin(π/6)",
+    "topic": "trigonometry",
+    "grade_level": "intermediate",
+    "solution_steps": [
+      "Recognize that π/6 radians = 30 degrees",
+      "Use the unit circle or special right triangle (30-60-90)",
+      "In a 30-60-90 triangle, the sides are in ratio 1 : √3 : 2",
+      "sin(30°) = opposite/hypotenuse = 1/2"
+    ],
+    "final_answer": "sin(π/6) = 1/2",
+    "educational_notes": "Memorizing special angle values (30°, 45°, 60°) is essential for trigonometry."
+  },
+  {
+    "id": "geom-001",
+    "question": "Find the area of a circle with radius 5 units",
+    "topic": "geometry",
+    "grade_level": "elementary",
+    "solution_steps": [
+      "Use the formula for area of a circle: A = πr^2",
+      "Substitute r = 5: A = π(5)^2",
+      "Calculate: A = π × 25 = 25π"
+    ],
+    "final_answer": "25π square units (approximately 78.54 square units)",
+    "educational_notes": "π (pi) is approximately 3.14159. The exact answer uses π, while the approximate uses decimal."
+  },
+  {
+    "id": "stat-001",
+    "question": "Find the mean of the dataset: 2, 4, 6, 8, 10",
+    "topic": "statistics",
+    "grade_level": "elementary",
+    "solution_steps": [
+      "Add all values: 2 + 4 + 6 + 8 + 10 = 30",
+      "Count the number of values: 5",
+      "Divide sum by count: 30 ÷ 5 = 6"
+    ],
+    "final_answer": "Mean = 6",
+    "educational_notes": "The mean (average) is the sum of all values divided by the number of values."
+  },
+  {
+    "id": "comp-001",
+    "question": "The number of complex numbers z satisfying |z| = 1 and |z^2 + (\\overline{z})^2| = 1 is:",
+    "topic": "complex numbers",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Let z = x + iy with x^2 + y^2 = 1 since |z| = 1.",
+      "Compute z^2 + (\\overline{z})^2 = (x+iy)^2 + (x-iy)^2 = 2(x^2 - y^2).",
+      "So |z^2 + (\\overline{z})^2| = |2(x^2 - y^2)| = 2|x^2 - y^2|. Set equal to 1 ⇒ |x^2 - y^2| = 1/2.",
+      "Using x^2 + y^2 = 1 and x^2 - y^2 = ±1/2, solve for x^2 and y^2: x^2 = (1 ± 1/2)/2, y^2 = (1 ∓ 1/2)/2, giving feasible (x,y) pairs.",
+      "Count all sign choices and the corresponding sign choices for x,y (± square roots) that satisfy the unit-circle condition."
+    ],
+    "final_answer": "option 2",
+    "educational_notes": "Convert expressions with z and \\overline{z} to real x,y, then use x^2+y^2=1 to reduce to algebraic conditions. (Source PDF answer-key marks option 2 as correct.)"
+  },
+  {
+    "id": "comp-002",
+    "question": "Let α and β be roots of x^2 − ax − b = 0 with Im(α) < Im(β). For sequence P_n = α^n − β^n, given P3 = −5√7 i, P4 = −3√7 i, P5 = 11√7 i, P6 = 45√7 i. Then |α^4 + β^4| equals:",
+    "topic": "complex numbers / recurrence",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Observe P_n follows linear recurrence determined by α+β and αβ (from the quadratic).",
+      "Use P3..P6 values to solve for recurrence coefficients (or directly use Vieta relations to deduce α and β up to symmetry).",
+      "Compute α^4 + β^4 using (α^2 + β^2)^2 − 2(αβ)^2 or via expressing α^4 + β^4 in terms of sums and products of α,β.",
+      "Evaluate absolute value."
+    ],
+    "final_answer": "31",
+    "educational_notes": "Use recurrence relations/Vieta relations to move from P_n values to symmetric polynomials like α^4 + β^4. The PDF solution arrives at |α^4 + β^4| = 31. :contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "id": "comp-003",
+    "question": "Let α + iβ and γ + iδ be complex numbers where α,β,γ,δ are integers. If the quadratic x^2 − (3 − 2i)x − (2i − 2) = 0 has roots (α + iβ) and (γ + iδ), compute the value αγ + βδ.",
+    "topic": "complex numbers / Vieta",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Compare coefficients: sum of roots = 3 − 2i, product = −(2i − 2) = 2 − 2i.",
+      "Let roots be u = α + iβ, v = γ + iδ. Then u+v = 3 − 2i and uv = 2 − 2i.",
+      "Compute real part of uv = αγ − βδ = Re(2 − 2i) = 2, and imaginary part gives other relation.",
+      "Solve for αγ + βδ via using (α+ iβ)(γ + iδ) = (αγ − βδ) + i(αδ + βγ). Use sum and product relations to extract required quantity."
+    ],
+    "final_answer": "2",
+    "educational_notes": "Write complex roots as pairs (α,β) and use Vieta's relations separating real and imaginary parts to form linear equations for integer components. :contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "id": "comp-004",
+    "question": "If |z| = 1 and z1, z2, z3 are three complex numbers on the unit circle with arg(z1) = −π/4, arg(z2) = 0, arg(z3) = π/4, compute |z1\\overline{z2} + z2\\overline{z3} + z3\\overline{z1}|^2.",
+    "topic": "complex numbers / geometry",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Write z1 = e^{−iπ/4}, z2 = 1, z3 = e^{iπ/4}. Compute conjugates accordingly.",
+      "Compute each product: z1\\overline{z2} = z1, z2\\overline{z3} = 1 * e^{−iπ/4} = e^{−iπ/4}, z3\\overline{z1} = e^{iπ/4} * e^{iπ/4} = e^{iπ/2}.",
+      "Sum them and compute modulus squared.",
+      "Simplify to get a real number (the PDF computation gives the squared modulus)."
+    ],
+    "final_answer": "5 - 2√2",
+    "educational_notes": "Place the given points on the unit circle using Euler form. Compute products as rotations, sum vectors, then take modulus squared. (Value appears in the PDF solution.) :contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "id": "comp-005",
+    "question": "Let z = x + iy satisfy (x + iy)(1 + i) + (x − iy)(1 − i) = 4. Describe the resulting locus (in x,y) and compute related geometric quantity asked in the problem.",
+    "topic": "complex numbers / locus",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Expand both terms: (x+iy)(1+i) = x + ix + iy − y and similarly for conjugate term.",
+      "Add the two expressions; many imaginary parts cancel; simplify to get a linear equation in x,y.",
+      "Obtain x − y = 2 (i.e., a straight line). Use any extra conditions in the original question (e.g., bounded region or circle) to compute requested area/distance if asked."
+    ],
+    "final_answer": "Line: x − y = 2 (and the problem's requested area/distance computed from this line and any given circles — see PDF).",
+    "educational_notes": "When given linear combinations of z and \\overline{z}, expand into x and y to get real equations of lines or circles. :contentReference[oaicite:4]{index=4}"
+  },
+  {
+    "id": "comp-006",
+    "question": "If 3|\\overline{z} − i| = |2\\overline{z} + i|, find the locus of z and other requested quantities.",
+    "topic": "complex numbers / locus",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Let z = x + iy so \\overline{z} = x − iy. Write both magnitudes in x,y.",
+      "Compute 3√(x^2 + (y+1)^2) = √((2x)^2 + (1 − 2y)^2). Square both sides to remove radicals.",
+      "Simplify to obtain a quadratic in x,y. The PDF simplifies to 5x^2 + 5y^2 + 22y + 8 = 0, which is a circle.",
+      "Find centre and radius from completing the square: centre (0, −11/5) and compute Δ or radius as needed."
+    ],
+    "final_answer": "Circle with equation 5x^2 + 5y^2 + 22y + 8 = 0 (centre (0, −11/5)).",
+    "educational_notes": "Equations of the form k|\\overline{z} + c| = |m\\overline{z} + d| lead to conic loci after squaring; complete the square to identify circle parameters. :contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "id": "comp-007",
+    "question": "Let OA = |z1| = √11 and OB = |z2| = √3 with arg relations given so that ∠A = 2π/3; compute the area of triangle ABD (or identify triangle type as asked).",
+    "topic": "complex numbers / geometry",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Use OA and OB magnitudes and the included angle to compute AB using law of cosines: AB^2 = OA^2 + OB^2 − 2⋅OA⋅OB⋅cos(2π/3).",
+      "Then compute area = (1/2)⋅OA⋅OB⋅sin(angle).",
+      "Follow the sign/angle choices given in problem to determine obtuse/acute nature; the PDF indicates the triangle is obtuse isosceles in the particular question."
+    ],
+    "final_answer": "PDF indicates result: triangle ABO is an obtuse angled isosceles triangle (option 1 in the question).",
+    "educational_notes": "Convert magnitudes and arguments to side lengths using cosine/sine rules. :contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "id": "comp-008",
+    "question": "If z satisfies |z − 3| ≤ 1 (i.e., z lies in a circle), compute the (area / shaded-unshaded) region asked in the problem.",
+    "topic": "complex numbers / area",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Interpret |z − 3| ≤ 1 as (x − 3)^2 + y^2 ≤ 1; that's a disk radius 1 centered at (3,0).",
+      "Use problem-specific additional shapes (e.g., subtracting wedge or overlapping region) described in the question to compute the shaded/unshaded area.",
+      "Apply circle area/subtraction formulas as in the PDF to get the numeric area value."
+    ],
+    "final_answer": "As per PDF working, the requested area difference equals expressions built from π; see PDF for exact numeric expression. (The PDF uses π/4 and related sector areas.)",
+    "educational_notes": "Translate modulus inequalities to circle equations and compute areas using sector and triangular area formulas. :contentReference[oaicite:7]{index=7}"
+  },
+  {
+    "id": "comp-009",
+    "question": "If α and β are roots of 2z^2 − 3z − 2i = 0, compute 16⋅Re( (α^4 + 1/α^4) )⋅Im( (α^4 + 1/α^4) ) or the number asked which depends on symmetric functions of α and β.",
+    "topic": "complex numbers / symmetric polynomials",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Use the quadratic to obtain α + β = 3/2 and αβ = −i.",
+      "Compute α^4 + 1/α^4 via expressing in terms of (α + β) and αβ or by using α^2 etc. and repeated squaring.",
+      "Separate real and imaginary parts and compute the product Re(…)⋅Im(…) then multiply by 16 as requested.",
+      "The PDF carries out these algebraic manipulations to get a concrete integer."
+    ],
+    "final_answer": "441",
+    "educational_notes": "High powers of roots can be expressed by repeated use of the minimal polynomial and symmetric functions; keep track of conjugation and algebraic simplifications. :contentReference[oaicite:8]{index=8}"
+  },
+  {
+    "id": "comp-010",
+    "question": "Let integers a,b be such that −3 ≤ a,b ≤ 3 and a + b ≠ 0. For how many ordered pairs (a,b) does |(z−a)/(z+b)| = 1 force z^3 = 1 (i.e., z = 1, ω, ω^2) as indicated by the condition in the question?",
+    "topic": "complex numbers / roots of unity",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "For |(z−a)/(z+b)| = 1 to hold for some complex z in the form of a root of unity, we solve |z−a| = |z+b| which means z lies on the perpendicular bisector of segment joining a and −b.",
+      "The special structure with roots of unity and the constraints on a,b restrict the valid ordered pairs.",
+      "Check pairwise possibilities (a,b) in the given integer range and count those satisfying derived constraints.",
+      "The PDF counts and lists them."
+    ],
+    "final_answer": "10",
+    "educational_notes": "This is a counting problem mixing modulus loci and roots of unity. The PDF enumerates permissible (a,b) pairs and reports 10. :contentReference[oaicite:9]{index=9}"
+  },
+  {
+    "id": "quad-001",
+    "question": "The number of solutions of the equation x² + |2x − 3| − 4 = 0 is:",
+    "topic": "quadratic equations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Case 1: If 2x − 3 ≥ 0 ⇒ |2x − 3| = 2x − 3. Substituting gives x² + 2x − 7 = 0.",
+      "Discriminant = 32 > 0 ⇒ 2 real roots, valid for x ≥ 1.5.",
+      "Case 2: If 2x − 3 < 0 ⇒ |2x − 3| = −2x + 3. Substituting gives x² − 2x − 1 = 0.",
+      "Discriminant = 8 > 0 ⇒ 2 real roots, valid for x < 1.5.",
+      "Hence total solutions = 2 + 2 = 4."
+    ],
+    "final_answer": "4",
+    "educational_notes": "For absolute value equations, split into cases and check conditions of validity."
+  },
+  {
+    "id": "quad-002",
+    "question": "The sum of the squares of all the roots of the equation (x² − 9x + 11)² − (x − 4)(x − 5) = 3 is:",
+    "topic": "quadratic equations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Expand (x² − 9x + 11)² − (x − 4)(x − 5) = 3.",
+      "Simplify to get a quartic equation.",
+      "Find all roots and compute sum of squares of roots using relations between coefficients.",
+      "Apply identity: (Σroots)² − 2Σ(product of roots taken two at a time).",
+      "Simplify to get the required result."
+    ],
+    "final_answer": "21",
+    "educational_notes": "For quartic equations, Vieta’s relations help compute expressions involving sums of powers of roots without solving explicitly."
+  },
+  {
+    "id": "quad-003",
+    "question": "If the set X = {x ∈ Z : α < x < β} for the quadratic 2x² + (a − 5)x + 15 = 3a, and Σx∈X x² is evaluated, then the result is:",
+    "topic": "quadratic equations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Rewrite the quadratic: 2x² + (a − 5)x + 15 − 3a = 0.",
+      "Find roots α and β in terms of a.",
+      "Determine integer values strictly between α and β.",
+      "Square each integer and sum.",
+      "Evaluate final value."
+    ],
+    "final_answer": "2109",
+    "educational_notes": "Quadratic inequalities with roots α, β help define integer sets. Use properties of sum of squares to simplify."
+  },
+  {
+    "id": "quad-004",
+    "question": "If the quadratic equation a(b − c)x² + b(c − a)x + c(a − b) = 0 has equal roots where a + c = 15 and b = 36, then a² + c² is equal to:",
+    "topic": "quadratic equations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "For equal roots, discriminant = 0.",
+      "Compute Δ = [b(c − a)]² − 4[a(b − c)][c(a − b)].",
+      "Substitute b = 36, a + c = 15.",
+      "Simplify the equation to solve for a and c.",
+      "Find a² + c²."
+    ],
+    "final_answer": "117",
+    "educational_notes": "Condition for equal roots (Δ = 0) is crucial. Relations among coefficients allow reduction to simple algebra."
+  },
+  {
+    "id": "quad-005",
+    "question": "The product of all the rational roots of the equation (x² − 9x + 11)² − (x − 4)(x − 5) = 3 is equal to:",
+    "topic": "quadratic equations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Check rational root theorem candidates (factors of constant / factors of leading coefficient).",
+      "Substitute each candidate into the equation.",
+      "Identify valid rational roots.",
+      "Multiply them together."
+    ],
+    "final_answer": "7",
+    "educational_notes": "Rational root theorem helps find rational solutions to polynomial equations efficiently."
+  },
+  {
+    "id": "quad-006",
+    "question": "Let α, β be the distinct roots of 2x² + (cosθ)x − 1 = 0, θ ∈ (0, 2π). If m and M are the minimum and maximum values of α⁴ + β⁴, then 16(M + m) equals:",
+    "topic": "quadratic equations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "For quadratic 2x² + (cosθ)x − 1 = 0, use Vieta’s: α + β = −cosθ / 2, αβ = −1/2.",
+      "Compute (α² + β²) = (α + β)² − 2αβ.",
+      "Then α⁴ + β⁴ = (α² + β²)² − 2(αβ)².",
+      "Express in terms of cosθ and simplify.",
+      "Find min and max values over θ ∈ (0, 2π).",
+      "Compute 16(M + m)."
+    ],
+    "final_answer": "384",
+    "educational_notes": "Expressions involving powers of roots can often be reduced using symmetric functions and Vieta’s formulas."
+  },
+  {
+    "id": "seq-001",
+    "question": "If the sum of the first n terms of a sequence is S_n = n^2 + 3n, find the general term a_n and the 10th term.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "We know a_n = S_n − S_(n−1).",
+      "So a_n = (n^2 + 3n) − ((n−1)^2 + 3(n−1)).",
+      "Simplify: (n^2 + 3n) − (n^2 − 2n + 1 + 3n − 3).",
+      "= n^2 + 3n − (n^2 + n − 4).",
+      "= 2n + 4.",
+      "Hence general term is a_n = 2n + 4.",
+      "For n = 10, a_10 = 2(10) + 4 = 24."
+    ],
+    "final_answer": "General term: a_n = 2n + 4; 10th term = 24",
+    "educational_notes": "Always use a_n = S_n − S_(n−1) when sum of n terms is given."
+  },
+  {
+    "id": "seq-002",
+    "question": "If a_1, a_2, … is an arithmetic progression with a_1 = 5 and common difference 3, find S_20.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Formula: S_n = n/2 (2a + (n−1)d).",
+      "Substitute: S_20 = 20/2 [2(5) + (20−1)(3)].",
+      "= 10 [10 + 57].",
+      "= 10 × 67 = 670."
+    ],
+    "final_answer": "670",
+    "educational_notes": "The sum formula for arithmetic progression is key: S_n = n/2 (2a + (n−1)d)."
+  },
+  {
+    "id": "seq-003",
+    "question": "If the 5th term of a GP is 48 and the 2nd term is 6, find the common ratio and the first term.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Let first term = a, common ratio = r.",
+      "Given: ar^4 = 48 and ar = 6.",
+      "Divide equations: (ar^4)/(ar) = r^3 = 48/6 = 8.",
+      "So r = 2.",
+      "Now ar = 6 ⇒ a×2 = 6 ⇒ a = 3."
+    ],
+    "final_answer": "First term = 3, Common ratio = 2",
+    "educational_notes": "Use given terms of GP to form equations and eliminate variables using ratios."
+  },
+  {
+    "id": "seq-004",
+    "question": "If sum of first 10 terms of an AP is 145 and its first term is 5, find the common difference.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Formula: S_n = n/2 (2a + (n−1)d).",
+      "Here n=10, S_10=145, a=5.",
+      "So 145 = 10/2 [2(5) + 9d].",
+      "145 = 5 [10 + 9d].",
+      "145 = 50 + 45d.",
+      "95 = 45d.",
+      "d = 95/45 = 19/9."
+    ],
+    "final_answer": "19/9",
+    "educational_notes": "Plug known values into sum formula and solve for common difference."
+  },
+  {
+    "id": "seq-005",
+    "question": "If 7th term of an AP is 17 and 13th term is 29, find the AP.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "General term: a_n = a + (n−1)d.",
+      "Given: a + 6d = 17 …(1), and a + 12d = 29 …(2).",
+      "Subtract: (a + 12d) − (a + 6d) = 29 − 17.",
+      "6d = 12 ⇒ d = 2.",
+      "From (1): a + 12 = 17 ⇒ a = 5.",
+      "Hence AP = 5, 7, 9, 11, …"
+    ],
+    "final_answer": "AP = 5, 7, 9, 11, …",
+    "educational_notes": "Use two known terms to solve system of equations for a and d."
+  },
+  {
+    "id": "seq-006",
+    "question": "If the sum of n terms of a sequence is S_n = 2n^2 + 3n, find the sequence.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "We know a_n = S_n − S_(n−1).",
+      "Compute: a_n = (2n^2 + 3n) − (2(n−1)^2 + 3(n−1)).",
+      "Expand S_(n−1): 2(n^2 − 2n + 1) + 3n − 3 = 2n^2 − 4n + 2 + 3n − 3 = 2n^2 − n − 1.",
+      "Now a_n = (2n^2 + 3n) − (2n^2 − n − 1).",
+      "Simplify: 2n^2 + 3n − 2n^2 + n + 1 = 4n + 1.",
+      "Hence sequence is a_n = 4n + 1."
+    ],
+    "final_answer": "General term: a_n = 4n + 1",
+    "educational_notes": "Always use a_n = S_n − S_(n−1) to retrieve the general term from sum formula."
+  },
+  {
+    "id": "seq-007",
+    "question": "If the 4th term of a GP is 16 and the 7th term is 128, find the GP.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "General term: a_n = ar^(n−1).",
+      "Given: ar^3 = 16 …(1), ar^6 = 128 …(2).",
+      "Divide (2)/(1): r^3 = 128/16 = 8 ⇒ r = 2.",
+      "From (1): a(2^3) = 16 ⇒ 8a = 16 ⇒ a = 2.",
+      "Hence GP = 2, 4, 8, 16, …"
+    ],
+    "final_answer": "GP = 2, 4, 8, 16, …",
+    "educational_notes": "Divide two terms to eliminate a and find r; then back-substitute to get a."
+  },
+  {
+    "id": "seq-008",
+    "question": "If the sum of an infinite GP is 20 and the first term is 12, find the common ratio.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Formula: S∞ = a / (1−r), with |r| < 1.",
+      "Here: 20 = 12 / (1−r).",
+      "Cross multiply: 20(1−r) = 12.",
+      "20 − 20r = 12 ⇒ 20r = 8 ⇒ r = 8/20 = 2/5."
+    ],
+    "final_answer": "2/5",
+    "educational_notes": "Infinite GP sum formula only valid if |r| < 1."
+  },
+  {
+    "id": "seq-009",
+    "question": "If a, b, c are in AP, show that (b−c)^3 + (c−a)^3 + (a−b)^3 = 0.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Since a, b, c in AP ⇒ b = (a+c)/2.",
+      "Compute each difference: b−c = (a−c)/2, c−a = c−a, a−b = (a−c)/2 with signs.",
+      "Use identity: x^3 + y^3 + z^3 − 3xyz = (x+y+z)(x^2+y^2+z^2 − xy − yz − zx).",
+      "Here x+y+z = 0 ⇒ sum of cubes = 3xyz = 0.",
+      "Hence proved."
+    ],
+    "final_answer": "0",
+    "educational_notes": "Symmetric identities simplify proofs involving AP, GP, HP relations."
+  },
+  {
+    "id": "seq-010",
+    "question": "Find the sum of the series: 1·2 + 2·3 + 3·4 + … + n(n+1).",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Expand general term: k(k+1) = k^2 + k.",
+      "So sum = Σk^2 + Σk from k=1 to n.",
+      "Use formulas: Σk = n(n+1)/2, Σk^2 = n(n+1)(2n+1)/6.",
+      "So S = [n(n+1)(2n+1)/6] + [n(n+1)/2].",
+      "Simplify: n(n+1)(2n+1 + 3)/6 = n(n+1)(2n+4)/6.",
+      "Simplify further: = n(n+1)(n+2)/3."
+    ],
+    "final_answer": "n(n+1)(n+2)/3",
+    "educational_notes": "Break product terms into standard summations (Σk, Σk²) to simplify."
+  },
+  {
+    "id": "seq-011",
+    "question": "If S = 1 + 1·2 + 1·2·3 + … up to n terms, find S_n.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Recognize terms as factorials: 1, 2!, 3!, … n!.",
+      "So S = 1! + 2! + 3! + … + n!.",
+      "No simple closed form, but can be expressed recursively.",
+      "Standard identity: Σk! from 1 to n = (n+1)! − 1.",
+      "Proof: Expand (n+1)! and subtract n! parts."
+    ],
+    "final_answer": "(n+1)! − 1",
+    "educational_notes": "Summation of factorials has a neat closed formula: Σk! = (n+1)! − 1."
+  },
+  {
+    "id": "seq-012",
+    "question": "The sum of n terms of an AP is 3n^2 + 5n. Find the AP.",
+    "topic": "sequences & series",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "General term: a_n = S_n − S_(n−1).",
+      "S_n = 3n^2 + 5n.",
+      "S_(n−1) = 3(n−1)^2 + 5(n−1) = 3n^2 − 6n + 3 + 5n − 5 = 3n^2 − n − 2.",
+      "So a_n = (3n^2 + 5n) − (3n^2 − n − 2) = 6n + 2.",
+      "So AP = 8, 14, 20, …"
+    ],
+    "final_answer": "AP = 8, 14, 20, …",
+    "educational_notes": "Derive term from sum formula using a_n = S_n − S_(n−1)."
+  },
+  {
+    "id": "pc-001",
+    "question": "How many 5-digit numbers can be formed using the digits 1,2,3,4,5 without repetition?",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "We must use all 5 digits once to form a 5-digit number.",
+      "Number of ways = 5! = 120."
+    ],
+    "final_answer": "120",
+    "educational_notes": "Permutation of n distinct digits taken all at a time is n!."
+  },
+  {
+    "id": "pc-002",
+    "question": "How many 4-digit numbers can be formed using the digits 1,2,3,4,5 without repetition?",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "We must choose 4 digits out of 5, then arrange them.",
+      "Ways = P(5,4) = 5! / (5−4)! = 5×4×3×2 = 120."
+    ],
+    "final_answer": "120",
+    "educational_notes": "The number of permutations of n objects taken r at a time is n! / (n−r)!."
+  },
+  {
+    "id": "pc-003",
+    "question": "How many words can be formed using all the letters of the word 'DELHI'?",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "The word DELHI has 5 distinct letters.",
+      "Number of arrangements = 5! = 120."
+    ],
+    "final_answer": "120",
+    "educational_notes": "For words with all distinct letters, total arrangements = factorial of number of letters."
+  },
+  {
+    "id": "pc-004",
+    "question": "How many words can be formed using all the letters of the word 'BANANA'?",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "The word BANANA has 6 letters, with repetitions: A appears 3 times, N appears 2 times.",
+      "Number of arrangements = 6! / (3!×2!) = 720 / 12 = 60."
+    ],
+    "final_answer": "60",
+    "educational_notes": "For repeated letters, divide total factorial by factorial of repetitions."
+  },
+  {
+    "id": "pc-005",
+    "question": "Find the number of permutations of the letters of the word 'COMMITTEE'.",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "The word COMMITTEE has 9 letters.",
+      "Repetitions: M occurs 2 times, T occurs 2 times, E occurs 2 times.",
+      "Number of permutations = 9! / (2!×2!×2!).",
+      "= 362880 / 8 = 45360."
+    ],
+    "final_answer": "45360",
+    "educational_notes": "Account for identical letters by dividing by factorial of their counts."
+  },
+  {
+    "id": "pc-006",
+    "question": "How many ways can a committee of 3 persons be selected from 8 persons?",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "This is a combination problem: number of ways = C(8,3).",
+      "C(8,3) = 8! / (3!5!) = (8×7×6)/(3×2×1) = 56."
+    ],
+    "final_answer": "56",
+    "educational_notes": "Selection without regard to order is a combination, C(n,r)."
+  },
+  {
+    "id": "pc-007",
+    "question": "In how many ways can the letters of the word 'MISSISSIPPI' be arranged?",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "The word has 11 letters in total.",
+      "Repetitions: M=1, I=4, S=4, P=2.",
+      "Number of arrangements = 11! / (1!×4!×4!×2!).",
+      "= 39916800 / 1152 = 34650."
+    ],
+    "final_answer": "34650",
+    "educational_notes": "When letters repeat, divide factorial by factorial of frequency of each repeated letter."
+  },
+  {
+    "id": "pc-008",
+    "question": "How many ways can 5 boys and 5 girls be seated in a row so that boys and girls sit alternately?",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Case 1: Start with boy. Then arrangement = 5! (boys) × 5! (girls).",
+      "Case 2: Start with girl. Then arrangement = 5! × 5!.",
+      "Total = 2 × (5!×5!) = 2 × 120 × 120 = 28800."
+    ],
+    "final_answer": "28800",
+    "educational_notes": "For alternate seating, fix one gender’s seats, then arrange both sets independently."
+  },
+  {
+    "id": "pc-009",
+    "question": "Find the number of diagonals in a convex polygon of n sides.",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "From n vertices, total number of line segments = C(n,2).",
+      "Subtract n sides of polygon.",
+      "Number of diagonals = C(n,2) − n = n(n−1)/2 − n = n(n−3)/2."
+    ],
+    "final_answer": "n(n−3)/2",
+    "educational_notes": "Diagonals are all vertex pairs except adjacent ones (sides)."
+  },
+  {
+    "id": "pc-010",
+    "question": "A committee of 4 persons is to be chosen from 6 men and 4 women such that the committee has at least one woman. How many ways?",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "Total ways to choose 4 persons from 10 = C(10,4) = 210.",
+      "Subtract cases with no woman (all men): C(6,4) = 15.",
+      "So required ways = 210 − 15 = 195."
+    ],
+    "final_answer": "195",
+    "educational_notes": "Use complementary counting: total minus unwanted cases."
+  },
+  {
+    "id": "pc-011",
+    "question": "Find the number of different 5-digit numbers that can be formed from the digits 1,2,3,4,5,6 if each digit is used at most once.",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "We must select 5 digits out of 6, then arrange them.",
+      "Number of ways = P(6,5) = 6! / 1! = 720."
+    ],
+    "final_answer": "720",
+    "educational_notes": "Choose r digits and permute them: P(n,r) = n! / (n−r)!"
+  },
+  {
+    "id": "pc-012",
+    "question": "How many ways can the letters of the word 'BOOKKEEPER' be arranged?",
+    "topic": "permutations & combinations",
+    "grade_level": "advanced",
+    "solution_steps": [
+      "BOOKKEEPER has 10 letters.",
+      "Repetitions: O=2, K=2, E=3.",
+      "Number of arrangements = 10! / (2!×2!×3!).",
+      "= 3628800 / 24 = 151200."
+    ],
+    "final_answer": "151200",
+    "educational_notes": "Account for repeated letters carefully when arranging."
+  }
+]

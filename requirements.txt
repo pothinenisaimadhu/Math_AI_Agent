@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+qdrant-client
+requests
+langchain
+langchain-community
+transformers
+sentence-transformers
+sympy
+numpy
+dspy-ai

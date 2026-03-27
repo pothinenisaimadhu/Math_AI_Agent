@@ -1,7 +1,7 @@
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel, validator
 from qdrant_client import QdrantClient, models
 try:
@@ -30,36 +30,34 @@ from functools import lru_cache
 
 app = FastAPI()
 
+# Read frontend HTML once at startup
+_BASE = os.path.dirname(os.path.abspath(__file__))
+_HTML_CANDIDATES = [
+    os.path.join(_BASE, "..", "frontend", "public", "index.html"),
+    os.path.join(_BASE, "frontend", "public", "index.html"),
+    os.path.join(os.getcwd(), "frontend", "public", "index.html"),
+]
+_FRONTEND_HTML = None
+for _p in _HTML_CANDIDATES:
+    if os.path.exists(_p):
+        with open(_p, "r", encoding="utf-8") as _f:
+            _FRONTEND_HTML = _f.read()
+        break
+
 @app.get("/debug-path")
 def debug_path():
-    base = os.path.dirname(os.path.abspath(__file__))
     return {
         "__file__": __file__,
-        "base": base,
+        "base": _BASE,
         "cwd": os.getcwd(),
-        "candidates": [
-            {"path": p, "exists": os.path.exists(p)}
-            for p in [
-                os.path.join(base, "..", "frontend", "public", "index.html"),
-                os.path.join(base, "frontend", "public", "index.html"),
-                os.path.join("/vercel/path0", "frontend", "public", "index.html"),
-                os.path.join(os.getcwd(), "frontend", "public", "index.html"),
-            ]
-        ]
+        "html_found": _FRONTEND_HTML is not None,
+        "candidates": [{"path": p, "exists": os.path.exists(p)} for p in _HTML_CANDIDATES]
     }
 
 @app.get("/")
 def root():
-    # Try multiple path resolutions for local and Vercel environments
-    base = os.path.dirname(os.path.abspath(__file__))
-    candidates = [
-        os.path.join(base, "..", "frontend", "public", "index.html"),
-        os.path.join(base, "frontend", "public", "index.html"),
-        os.path.join("/vercel/path0", "frontend", "public", "index.html"),
-    ]
-    for html_path in candidates:
-        if os.path.exists(html_path):
-            return FileResponse(os.path.abspath(html_path), media_type="text/html")
+    if _FRONTEND_HTML:
+        return HTMLResponse(content=_FRONTEND_HTML)
     return {"status": "Math AI Tutor API is running", "endpoints": ["/solve", "/status", "/feedback"]}
 
 app.add_middleware(

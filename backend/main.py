@@ -28,6 +28,10 @@ from functools import lru_cache
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"status": "Math AI Tutor API is running", "endpoints": ["/solve", "/status", "/feedback"]}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

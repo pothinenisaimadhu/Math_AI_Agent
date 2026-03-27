@@ -1,6 +1,9 @@
 from typing import Dict, Any, Optional
 import logging
-from config import GRANITE_MODEL, LLAMA_MODEL, OLLAMA_URL
+try:
+    from config import GRANITE_MODEL, LLAMA_MODEL, OLLAMA_URL
+except ImportError:
+    from backend.config import GRANITE_MODEL, LLAMA_MODEL, OLLAMA_URL
 
 logger = logging.getLogger(__name__)
 

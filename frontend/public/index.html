@@ -22,7 +22,7 @@
     <div id="root"></div>
     <script type="text/babel">
       const { useState, useRef, useEffect } = React;
-      const API_URL = window.MATH_API_URL || "http://localhost:8000";
+      const API_URL = window.MATH_API_URL || "https://mathaiagent-production.up.railway.app";
 
       const InlineMath = ({ math }) => {
         const ref = useRef(null);

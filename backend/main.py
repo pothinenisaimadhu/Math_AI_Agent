@@ -1,6 +1,7 @@
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, validator
 from qdrant_client import QdrantClient, models
 try:
@@ -22,6 +23,7 @@ except ImportError:
 import requests
 import logging
 import asyncio
+import os
 from typing import Optional, Dict, Any
 import time
 from functools import lru_cache
@@ -30,6 +32,9 @@ app = FastAPI()
 
 @app.get("/")
 def root():
+    html_path = os.path.join(os.path.dirname(__file__), "..", "frontend", "public", "index.html")
+    if os.path.exists(html_path):
+        return FileResponse(html_path, media_type="text/html")
     return {"status": "Math AI Tutor API is running", "endpoints": ["/solve", "/status", "/feedback"]}
 
 app.add_middleware(

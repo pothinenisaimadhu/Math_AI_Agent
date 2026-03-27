@@ -30,6 +30,8 @@
         const [editText, setEditText] = useState("");
         const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+        const API_URL = window.location.origin;
+
         const handleSubmit = async (queryText = question) => {
           if (!queryText.trim()) return;
 
@@ -42,7 +44,7 @@
           setLoading(true);
 
           try {
-            const res = await fetch("http://localhost:8000/solve", {
+            const res = await fetch(`${API_URL}/solve`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ user_id: "demo", question: queryText }),

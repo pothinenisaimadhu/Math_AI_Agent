@@ -1,46 +1,39 @@
 import requests
-import json
 from typing import Optional
 
 class OllamaClient:
-    def __init__(self, base_url: str = "http://localhost:11434"):
-        self.base_url = base_url
-    
-    def generate(self, model: str, prompt: str, timeout: int = 180) -> Optional[str]:
-        """Generate text using Ollama API"""
+    """OpenRouter-backed LLM client (drop-in replacement for Ollama)"""
+
+    def __init__(self, base_url: str = None):
+        import os
+        self.api_key = os.getenv("OPENROUTER_API_KEY", "")
+        self.model = os.getenv("OPENROUTER_MODEL", "nvidia/nemotron-nano-9b-v2:free")
+        self.base_url = "https://openrouter.ai/api/v1"
+
+    def generate(self, model: str, prompt: str, timeout: int = 60) -> Optional[str]:
         try:
-            url = f"{self.base_url}/api/generate"
-            payload = {
-                "model": model,
-                "prompt": prompt,
-                "stream": False,
-                "options": {
+            response = requests.post(
+                f"{self.base_url}/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {self.api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": self.model,
+                    "messages": [{"role": "user", "content": prompt}],
                     "temperature": 0.7,
-                    "top_p": 0.9,
-                    "num_ctx": 2048
-                }
-            }
-            
-            response = requests.post(url, json=payload, timeout=timeout)
+                    "max_tokens": 1024,
+                },
+                timeout=timeout,
+            )
             response.raise_for_status()
-            
-            data = response.json()
-            return data.get("response", "").strip()
-            
+            return response.json()["choices"][0]["message"]["content"].strip()
         except requests.exceptions.Timeout:
-            print(f"Ollama request timed out after {timeout}s")
-            return None
-        except requests.exceptions.RequestException as e:
-            print(f"Ollama API request failed: {e}")
+            print(f"OpenRouter request timed out after {timeout}s")
             return None
         except Exception as e:
-            print(f"Ollama generation error: {e}")
+            print(f"OpenRouter error: {e}")
             return None
-    
+
     def is_available(self) -> bool:
-        """Check if Ollama is running"""
-        try:
-            response = requests.get(f"{self.base_url}/api/tags", timeout=5)
-            return response.status_code == 200
-        except:
-            return False
+        return bool(self.api_key)

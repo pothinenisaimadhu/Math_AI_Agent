@@ -30,11 +30,36 @@ from functools import lru_cache
 
 app = FastAPI()
 
+@app.get("/debug-path")
+def debug_path():
+    base = os.path.dirname(os.path.abspath(__file__))
+    return {
+        "__file__": __file__,
+        "base": base,
+        "cwd": os.getcwd(),
+        "candidates": [
+            {"path": p, "exists": os.path.exists(p)}
+            for p in [
+                os.path.join(base, "..", "frontend", "public", "index.html"),
+                os.path.join(base, "frontend", "public", "index.html"),
+                os.path.join("/vercel/path0", "frontend", "public", "index.html"),
+                os.path.join(os.getcwd(), "frontend", "public", "index.html"),
+            ]
+        ]
+    }
+
 @app.get("/")
 def root():
-    html_path = os.path.join(os.path.dirname(__file__), "..", "frontend", "public", "index.html")
-    if os.path.exists(html_path):
-        return FileResponse(html_path, media_type="text/html")
+    # Try multiple path resolutions for local and Vercel environments
+    base = os.path.dirname(os.path.abspath(__file__))
+    candidates = [
+        os.path.join(base, "..", "frontend", "public", "index.html"),
+        os.path.join(base, "frontend", "public", "index.html"),
+        os.path.join("/vercel/path0", "frontend", "public", "index.html"),
+    ]
+    for html_path in candidates:
+        if os.path.exists(html_path):
+            return FileResponse(os.path.abspath(html_path), media_type="text/html")
     return {"status": "Math AI Tutor API is running", "endpoints": ["/solve", "/status", "/feedback"]}
 
 app.add_middleware(

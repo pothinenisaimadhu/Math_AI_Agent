@@ -3,13 +3,22 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, validator
 from qdrant_client import QdrantClient, models
-from config import QDRANT_URL, QDRANT_COLLECTION, GRANITE_MODEL, OLLAMA_URL, LLAMA_MODEL
-from mcp import MCPClient
-from ollama_client import OllamaClient
-from ai_gateway import AIGateway
-from enhanced_retrieval import EnhancedRetrieval
-from model_manager import ModelManager
-from response_cache import ResponseCache
+try:
+    from config import QDRANT_URL, QDRANT_COLLECTION, GRANITE_MODEL, OLLAMA_URL, LLAMA_MODEL
+    from mcp import MCPClient
+    from ollama_client import OllamaClient
+    from ai_gateway import AIGateway
+    from enhanced_retrieval import EnhancedRetrieval
+    from model_manager import ModelManager
+    from response_cache import ResponseCache
+except ImportError:
+    from backend.config import QDRANT_URL, QDRANT_COLLECTION, GRANITE_MODEL, OLLAMA_URL, LLAMA_MODEL
+    from backend.mcp import MCPClient
+    from backend.ollama_client import OllamaClient
+    from backend.ai_gateway import AIGateway
+    from backend.enhanced_retrieval import EnhancedRetrieval
+    from backend.model_manager import ModelManager
+    from backend.response_cache import ResponseCache
 import requests
 import logging
 import asyncio
